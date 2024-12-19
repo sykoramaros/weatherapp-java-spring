@@ -15,12 +15,12 @@ import java.util.Collection;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class WeatherController {
     @Autowired
     WeatherService weatherService;
 
     @GetMapping({"/weather", "/weather/"})
-    @CrossOrigin
     public Collection<WeatherDto> getWeather() {
         List<WeatherDto> weatherDtoList = new ArrayList<>();
         for (City cityEnum : City.values()) {
@@ -28,7 +28,6 @@ public class WeatherController {
         }
         return weatherDtoList;
     }
-    @CrossOrigin
     @GetMapping({"/weather/{city}", "/weather/{city}/"})
     public WeatherDto getWeatherForCity(@PathVariable("city") @Parameter(name="city", description="Vyhledejte mista jako: ULAANBAATAR, HOVSGOL, SOUL, GUJARAT, MAHARASHTRA, KASHMIR, LIMA, LUKLA, ALMATY, GERALDTON, BANDUNDU, USHUAIA, INUVIK, CHIBA, SUNCHEON, COVENTRY") String city) {
        return weatherService.getWeatherForCity(city);
