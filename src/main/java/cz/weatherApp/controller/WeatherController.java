@@ -30,7 +30,7 @@ public class WeatherController {
     }
     @CrossOrigin
     @GetMapping({"/weather/{city}", "/weather/{city}/"})
-    public WeatherDto getWeatherForCity(@PathVariable("city") @Parameter(name="city", description="ok funguje pro Ostravu, ...") String city) {
+    public WeatherDto getWeatherForCity(@PathVariable("city") @Parameter(name="city", description="Vyhledejte mista jako: ULAANBAATAR, HOVSGOL, SOUL, GUJARAT, MAHARASHTRA, KASHMIR, LIMA, LUKLA, ALMATY, GERALDTON, BANDUNDU, USHUAIA, INUVIK, CHIBA, SUNCHEON, COVENTRY") String city) {
        return weatherService.getWeatherForCity(city);
     }
 }
