@@ -8,6 +8,7 @@ public class WeatherDto {
     private double windSpeed_mps;
     private String windDirection;
     private String weatherDescription;
+    private String icon;
 
     public String getLocation() {
         return location;
@@ -63,5 +64,13 @@ public class WeatherDto {
 
     public void setWeatherDescription(String weatherDescription) {
         this.weatherDescription = weatherDescription;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 }

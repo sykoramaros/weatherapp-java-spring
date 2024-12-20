@@ -24,6 +24,7 @@ public class WeatherService {
         weatherDto.setWeatherDescription(wdto.getCurrent().getCondition().getText()); // vrati popis
         weatherDto.setWindDirection(wdto.getCurrent().getWind_dir()); // vrati smer vetru
         weatherDto.setWindSpeed_mps(wdto.getCurrent().getWind_kph()/3.6); // vrati rychlost vetru
+        weatherDto.setIcon(wdto.getCurrent().getCondition().getIcon());
         return weatherDto;
     }
 }
